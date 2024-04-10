@@ -1,0 +1,177 @@
+[
+  {
+    "collection": "questions",
+    "field": "user_updated",
+    "related_collection": "directus_users",
+    "schema": {
+      "table": "questions",
+      "column": "user_updated",
+      "foreign_key_table": "directus_users",
+      "foreign_key_column": "id",
+      "on_update": "NO ACTION",
+      "on_delete": "NO ACTION",
+      "constraint_name": null
+    },
+    "meta": {
+      "many_collection": "questions",
+      "many_field": "user_updated",
+      "one_collection": "directus_users",
+      "one_field": null,
+      "one_collection_field": null,
+      "one_allowed_collections": null,
+      "junction_field": null,
+      "sort_field": null,
+      "one_deselect_action": "nullify"
+    }
+  },
+  {
+    "collection": "questions",
+    "field": "user_created",
+    "related_collection": "directus_users",
+    "schema": {
+      "table": "questions",
+      "column": "user_created",
+      "foreign_key_table": "directus_users",
+      "foreign_key_column": "id",
+      "on_update": "NO ACTION",
+      "on_delete": "NO ACTION",
+      "constraint_name": null
+    },
+    "meta": {
+      "many_collection": "questions",
+      "many_field": "user_created",
+      "one_collection": "directus_users",
+      "one_field": null,
+      "one_collection_field": null,
+      "one_allowed_collections": null,
+      "junction_field": null,
+      "sort_field": null,
+      "one_deselect_action": "nullify"
+    }
+  },
+  {
+    "collection": "agencies",
+    "field": "director_of_client_services",
+    "related_collection": "directus_users",
+    "schema": {
+      "table": "agencies",
+      "column": "director_of_client_services",
+      "foreign_key_table": "directus_users",
+      "foreign_key_column": "id",
+      "on_update": "NO ACTION",
+      "on_delete": "SET NULL",
+      "constraint_name": null
+    },
+    "meta": {
+      "many_collection": "agencies",
+      "many_field": "director_of_client_services",
+      "one_collection": "directus_users",
+      "one_field": null,
+      "one_collection_field": null,
+      "one_allowed_collections": null,
+      "junction_field": null,
+      "sort_field": null,
+      "one_deselect_action": "nullify"
+    }
+  },
+  {
+    "collection": "contacts",
+    "field": "client",
+    "related_collection": "clients",
+    "schema": {
+      "table": "contacts",
+      "column": "client",
+      "foreign_key_table": "clients",
+      "foreign_key_column": "id",
+      "on_update": "NO ACTION",
+      "on_delete": "SET NULL",
+      "constraint_name": null
+    },
+    "meta": {
+      "many_collection": "contacts",
+      "many_field": "client",
+      "one_collection": "clients",
+      "one_field": "contacts",
+      "one_collection_field": null,
+      "one_allowed_collections": null,
+      "junction_field": null,
+      "sort_field": null,
+      "one_deselect_action": "nullify"
+    }
+  },
+  {
+    "collection": "projects",
+    "field": "client",
+    "related_collection": "clients",
+    "schema": {
+      "table": "projects",
+      "column": "client",
+      "foreign_key_table": "clients",
+      "foreign_key_column": "id",
+      "on_update": "NO ACTION",
+      "on_delete": "SET NULL",
+      "constraint_name": null
+    },
+    "meta": {
+      "many_collection": "projects",
+      "many_field": "client",
+      "one_collection": "clients",
+      "one_field": "projects",
+      "one_collection_field": null,
+      "one_allowed_collections": null,
+      "junction_field": null,
+      "sort_field": null,
+      "one_deselect_action": "nullify"
+    }
+  },
+  {
+    "collection": "clients",
+    "field": "agency",
+    "related_collection": "agencies",
+    "schema": {
+      "table": "clients",
+      "column": "agency",
+      "foreign_key_table": "agencies",
+      "foreign_key_column": "id",
+      "on_update": "NO ACTION",
+      "on_delete": "SET NULL",
+      "constraint_name": null
+    },
+    "meta": {
+      "many_collection": "clients",
+      "many_field": "agency",
+      "one_collection": "agencies",
+      "one_field": "clients",
+      "one_collection_field": null,
+      "one_allowed_collections": null,
+      "junction_field": null,
+      "sort_field": null,
+      "one_deselect_action": "nullify"
+    }
+  },
+  {
+    "collection": "directus_users",
+    "field": "agency",
+    "related_collection": "agencies",
+    "schema": {
+      "table": "directus_users",
+      "column": "agency",
+      "foreign_key_table": "agencies",
+      "foreign_key_column": "id",
+      "on_update": "NO ACTION",
+      "on_delete": "SET NULL",
+      "constraint_name": null
+    },
+    "meta": {
+      "many_collection": "directus_users",
+      "many_field": "agency",
+      "one_collection": "agencies",
+      "one_field": "account_managers",
+      "one_collection_field": null,
+      "one_allowed_collections": null,
+      "junction_field": null,
+      "sort_field": null,
+      "one_deselect_action": "nullify"
+    }
+  }
+]

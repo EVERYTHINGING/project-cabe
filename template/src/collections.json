@@ -1,0 +1,176 @@
+[
+  {
+    "collection": "agencies",
+    "meta": {
+      "collection": "agencies",
+      "icon": "partner_exchange",
+      "note": null,
+      "display_template": null,
+      "hidden": false,
+      "singleton": false,
+      "translations": null,
+      "archive_field": null,
+      "archive_app_filter": true,
+      "archive_value": null,
+      "unarchive_value": null,
+      "sort_field": null,
+      "accountability": "all",
+      "color": null,
+      "item_duplication_fields": null,
+      "sort": 1,
+      "group": null,
+      "collapse": "open",
+      "preview_url": null,
+      "versioning": false
+    },
+    "schema": {
+      "name": "agencies",
+      "sql": "CREATE TABLE \"agencies\" (`id` char(36) NOT NULL, `name` varchar(255) NULL, `director_of_client_services` varchar(255) NULL, PRIMARY KEY (`id`), CONSTRAINT `agencies_director_of_client_services_foreign` FOREIGN KEY (`director_of_client_services`) REFERENCES `directus_users` (`id`) ON DELETE SET NULL)"
+    }
+  },
+  {
+    "collection": "clients",
+    "meta": {
+      "collection": "clients",
+      "icon": "attach_money",
+      "note": null,
+      "display_template": null,
+      "hidden": false,
+      "singleton": false,
+      "translations": null,
+      "archive_field": null,
+      "archive_app_filter": true,
+      "archive_value": null,
+      "unarchive_value": null,
+      "sort_field": null,
+      "accountability": "all",
+      "color": null,
+      "item_duplication_fields": null,
+      "sort": 2,
+      "group": "agencies",
+      "collapse": "open",
+      "preview_url": null,
+      "versioning": false
+    },
+    "schema": {
+      "name": "clients",
+      "sql": "CREATE TABLE \"clients\" (`id` char(36) NOT NULL, `name` varchar(255) NULL, `agency` char(36) NULL, PRIMARY KEY (`id`), CONSTRAINT `clients_agency_foreign` FOREIGN KEY (`agency`) REFERENCES `agencies` (`id`) ON DELETE SET NULL)"
+    }
+  },
+  {
+    "collection": "contacts",
+    "meta": {
+      "collection": "contacts",
+      "icon": "person",
+      "note": null,
+      "display_template": null,
+      "hidden": false,
+      "singleton": false,
+      "translations": null,
+      "archive_field": null,
+      "archive_app_filter": true,
+      "archive_value": null,
+      "unarchive_value": null,
+      "sort_field": null,
+      "accountability": "all",
+      "color": null,
+      "item_duplication_fields": null,
+      "sort": 2,
+      "group": "clients",
+      "collapse": "open",
+      "preview_url": null,
+      "versioning": false
+    },
+    "schema": {
+      "name": "contacts",
+      "sql": "CREATE TABLE \"contacts\" (`id` char(36) NOT NULL, `first_name` varchar(255) NULL, `last_name` varchar(255) NULL, `email` varchar(255) NULL, `title` varchar(255) NULL, `client` char(36) NULL, PRIMARY KEY (`id`), CONSTRAINT `contacts_client_foreign` FOREIGN KEY (`client`) REFERENCES `clients` (`id`) ON DELETE SET NULL)"
+    }
+  },
+  {
+    "collection": "projects",
+    "meta": {
+      "collection": "projects",
+      "icon": "interactive_space",
+      "note": null,
+      "display_template": null,
+      "hidden": false,
+      "singleton": false,
+      "translations": null,
+      "archive_field": null,
+      "archive_app_filter": true,
+      "archive_value": null,
+      "unarchive_value": null,
+      "sort_field": null,
+      "accountability": "all",
+      "color": null,
+      "item_duplication_fields": null,
+      "sort": 1,
+      "group": "clients",
+      "collapse": "open",
+      "preview_url": null,
+      "versioning": false
+    },
+    "schema": {
+      "name": "projects",
+      "sql": "CREATE TABLE \"projects\" (`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL, `name` varchar(255) NULL, `client` char(36) NULL, `type` varchar(255) NULL, `clien` char(36) NULL, CONSTRAINT `projects_client_foreign` FOREIGN KEY (`client`) REFERENCES `clients` (`id`) ON DELETE SET NULL)"
+    }
+  },
+  {
+    "collection": "questions",
+    "meta": {
+      "collection": "questions",
+      "icon": "question_mark",
+      "note": null,
+      "display_template": null,
+      "hidden": false,
+      "singleton": false,
+      "translations": null,
+      "archive_field": null,
+      "archive_app_filter": true,
+      "archive_value": null,
+      "unarchive_value": null,
+      "sort_field": null,
+      "accountability": "all",
+      "color": null,
+      "item_duplication_fields": null,
+      "sort": 1,
+      "group": "surveys",
+      "collapse": "open",
+      "preview_url": null,
+      "versioning": false
+    },
+    "schema": {
+      "name": "questions",
+      "sql": "CREATE TABLE \"questions\" (`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL, `user_created` char(36) NULL, `date_created` datetime NULL, `user_updated` char(36) NULL, `date_updated` datetime NULL, `title` varchar(255) null, `type` varchar(255) null, `response` text null, CONSTRAINT `questions_user_created_foreign` FOREIGN KEY (`user_created`) REFERENCES `directus_users` (`id`), CONSTRAINT `questions_user_updated_foreign` FOREIGN KEY (`user_updated`) REFERENCES `directus_users` (`id`))"
+    }
+  },
+  {
+    "collection": "surveys",
+    "meta": {
+      "collection": "surveys",
+      "icon": "fact_check",
+      "note": null,
+      "display_template": null,
+      "hidden": false,
+      "singleton": false,
+      "translations": null,
+      "archive_field": null,
+      "archive_app_filter": true,
+      "archive_value": null,
+      "unarchive_value": null,
+      "sort_field": null,
+      "accountability": "all",
+      "color": null,
+      "item_duplication_fields": null,
+      "sort": 1,
+      "group": "agencies",
+      "collapse": "open",
+      "preview_url": null,
+      "versioning": false
+    },
+    "schema": {
+      "name": "surveys",
+      "sql": "CREATE TABLE `surveys` (`id` char(36) not null, primary key (`id`))"
+    }
+  }
+]

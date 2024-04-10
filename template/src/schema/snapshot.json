@@ -1,0 +1,1689 @@
+{
+  "version": 1,
+  "directus": "10.10.4",
+  "vendor": "sqlite",
+  "collections": [
+    {
+      "collection": "agencies",
+      "meta": {
+        "accountability": "all",
+        "archive_app_filter": true,
+        "archive_field": null,
+        "archive_value": null,
+        "collapse": "open",
+        "collection": "agencies",
+        "color": null,
+        "display_template": null,
+        "group": null,
+        "hidden": false,
+        "icon": "partner_exchange",
+        "item_duplication_fields": null,
+        "note": null,
+        "preview_url": null,
+        "singleton": false,
+        "sort": 1,
+        "sort_field": null,
+        "translations": null,
+        "unarchive_value": null,
+        "versioning": false
+      },
+      "schema": {
+        "name": "agencies"
+      }
+    },
+    {
+      "collection": "clients",
+      "meta": {
+        "accountability": "all",
+        "archive_app_filter": true,
+        "archive_field": null,
+        "archive_value": null,
+        "collapse": "open",
+        "collection": "clients",
+        "color": null,
+        "display_template": null,
+        "group": "agencies",
+        "hidden": false,
+        "icon": "attach_money",
+        "item_duplication_fields": null,
+        "note": null,
+        "preview_url": null,
+        "singleton": false,
+        "sort": 2,
+        "sort_field": null,
+        "translations": null,
+        "unarchive_value": null,
+        "versioning": false
+      },
+      "schema": {
+        "name": "clients"
+      }
+    },
+    {
+      "collection": "contacts",
+      "meta": {
+        "accountability": "all",
+        "archive_app_filter": true,
+        "archive_field": null,
+        "archive_value": null,
+        "collapse": "open",
+        "collection": "contacts",
+        "color": null,
+        "display_template": null,
+        "group": "clients",
+        "hidden": false,
+        "icon": "person",
+        "item_duplication_fields": null,
+        "note": null,
+        "preview_url": null,
+        "singleton": false,
+        "sort": 2,
+        "sort_field": null,
+        "translations": null,
+        "unarchive_value": null,
+        "versioning": false
+      },
+      "schema": {
+        "name": "contacts"
+      }
+    },
+    {
+      "collection": "projects",
+      "meta": {
+        "accountability": "all",
+        "archive_app_filter": true,
+        "archive_field": null,
+        "archive_value": null,
+        "collapse": "open",
+        "collection": "projects",
+        "color": null,
+        "display_template": null,
+        "group": "clients",
+        "hidden": false,
+        "icon": "interactive_space",
+        "item_duplication_fields": null,
+        "note": null,
+        "preview_url": null,
+        "singleton": false,
+        "sort": 1,
+        "sort_field": null,
+        "translations": null,
+        "unarchive_value": null,
+        "versioning": false
+      },
+      "schema": {
+        "name": "projects"
+      }
+    },
+    {
+      "collection": "questions",
+      "meta": {
+        "accountability": "all",
+        "archive_app_filter": true,
+        "archive_field": null,
+        "archive_value": null,
+        "collapse": "open",
+        "collection": "questions",
+        "color": null,
+        "display_template": null,
+        "group": "surveys",
+        "hidden": false,
+        "icon": "question_mark",
+        "item_duplication_fields": null,
+        "note": null,
+        "preview_url": null,
+        "singleton": false,
+        "sort": 1,
+        "sort_field": null,
+        "translations": null,
+        "unarchive_value": null,
+        "versioning": false
+      },
+      "schema": {
+        "name": "questions"
+      }
+    },
+    {
+      "collection": "surveys",
+      "meta": {
+        "accountability": "all",
+        "archive_app_filter": true,
+        "archive_field": null,
+        "archive_value": null,
+        "collapse": "open",
+        "collection": "surveys",
+        "color": null,
+        "display_template": null,
+        "group": "agencies",
+        "hidden": false,
+        "icon": "fact_check",
+        "item_duplication_fields": null,
+        "note": null,
+        "preview_url": null,
+        "singleton": false,
+        "sort": 1,
+        "sort_field": null,
+        "translations": null,
+        "unarchive_value": null,
+        "versioning": false
+      },
+      "schema": {
+        "name": "surveys"
+      }
+    }
+  ],
+  "fields": [
+    {
+      "collection": "agencies",
+      "field": "id",
+      "type": "uuid",
+      "meta": {
+        "collection": "agencies",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "id",
+        "group": null,
+        "hidden": true,
+        "interface": "input",
+        "note": null,
+        "options": null,
+        "readonly": true,
+        "required": false,
+        "sort": 1,
+        "special": [
+          "uuid"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "id",
+        "table": "agencies",
+        "data_type": "char",
+        "default_value": null,
+        "max_length": 36,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": true,
+        "is_primary_key": true,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "agencies",
+      "field": "name",
+      "type": "string",
+      "meta": {
+        "collection": "agencies",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "name",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "sort": 2,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "name",
+        "table": "agencies",
+        "data_type": "varchar",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "agencies",
+      "field": "director_of_client_services",
+      "type": "string",
+      "meta": {
+        "collection": "agencies",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "director_of_client_services",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown-m2o",
+        "note": null,
+        "options": {
+          "filter": {
+            "_and": [
+              {
+                "role": {
+                  "name": {
+                    "_eq": "Director Of Client Services"
+                  }
+                }
+              }
+            ]
+          },
+          "template": "{{first_name}} {{last_name}}"
+        },
+        "readonly": false,
+        "required": false,
+        "sort": 3,
+        "special": [
+          "m2o"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "director_of_client_services",
+        "table": "agencies",
+        "data_type": "varchar",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": true,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": "directus_users",
+        "foreign_key_column": "id"
+      }
+    },
+    {
+      "collection": "agencies",
+      "field": "clients",
+      "type": "alias",
+      "meta": {
+        "collection": "agencies",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "clients",
+        "group": null,
+        "hidden": false,
+        "interface": "list-o2m",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "sort": 5,
+        "special": [
+          "o2m"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      }
+    },
+    {
+      "collection": "agencies",
+      "field": "account_managers",
+      "type": "alias",
+      "meta": {
+        "collection": "agencies",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "account_managers",
+        "group": null,
+        "hidden": false,
+        "interface": "list-o2m",
+        "note": null,
+        "options": {
+          "filter": {
+            "_and": [
+              {
+                "role": {
+                  "name": {
+                    "_eq": "Account Manager"
+                  }
+                }
+              }
+            ]
+          },
+          "template": "{{first_name}} {{last_name}}"
+        },
+        "readonly": false,
+        "required": false,
+        "sort": 4,
+        "special": [
+          "o2m"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      }
+    },
+    {
+      "collection": "clients",
+      "field": "id",
+      "type": "uuid",
+      "meta": {
+        "collection": "clients",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "id",
+        "group": null,
+        "hidden": true,
+        "interface": "input",
+        "note": null,
+        "options": null,
+        "readonly": true,
+        "required": false,
+        "sort": 1,
+        "special": [
+          "uuid"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "id",
+        "table": "clients",
+        "data_type": "char",
+        "default_value": null,
+        "max_length": 36,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": true,
+        "is_primary_key": true,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "clients",
+      "field": "name",
+      "type": "string",
+      "meta": {
+        "collection": "clients",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "name",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "sort": 2,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "name",
+        "table": "clients",
+        "data_type": "varchar",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "clients",
+      "field": "contacts",
+      "type": "alias",
+      "meta": {
+        "collection": "clients",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "contacts",
+        "group": null,
+        "hidden": false,
+        "interface": "list-o2m",
+        "note": null,
+        "options": {
+          "template": "{{first_name}}{{last_name}}"
+        },
+        "readonly": false,
+        "required": false,
+        "sort": 3,
+        "special": [
+          "o2m"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      }
+    },
+    {
+      "collection": "clients",
+      "field": "projects",
+      "type": "alias",
+      "meta": {
+        "collection": "clients",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "projects",
+        "group": null,
+        "hidden": false,
+        "interface": "list-o2m",
+        "note": null,
+        "options": {
+          "template": "{{name}}"
+        },
+        "readonly": false,
+        "required": false,
+        "sort": 4,
+        "special": [
+          "o2m"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      }
+    },
+    {
+      "collection": "clients",
+      "field": "agency",
+      "type": "string",
+      "meta": {
+        "collection": "clients",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "agency",
+        "group": null,
+        "hidden": true,
+        "interface": "select-dropdown-m2o",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "sort": 5,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "agency",
+        "table": "clients",
+        "data_type": "char",
+        "default_value": null,
+        "max_length": 36,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": "agencies",
+        "foreign_key_column": "id"
+      }
+    },
+    {
+      "collection": "contacts",
+      "field": "id",
+      "type": "uuid",
+      "meta": {
+        "collection": "contacts",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "id",
+        "group": null,
+        "hidden": true,
+        "interface": "input",
+        "note": null,
+        "options": null,
+        "readonly": true,
+        "required": false,
+        "sort": 1,
+        "special": [
+          "uuid"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "id",
+        "table": "contacts",
+        "data_type": "char",
+        "default_value": null,
+        "max_length": 36,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": true,
+        "is_primary_key": true,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "contacts",
+      "field": "first_name",
+      "type": "string",
+      "meta": {
+        "collection": "contacts",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "first_name",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "sort": 2,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "first_name",
+        "table": "contacts",
+        "data_type": "varchar",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "contacts",
+      "field": "last_name",
+      "type": "string",
+      "meta": {
+        "collection": "contacts",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "last_name",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "sort": 3,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "last_name",
+        "table": "contacts",
+        "data_type": "varchar",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "contacts",
+      "field": "email",
+      "type": "string",
+      "meta": {
+        "collection": "contacts",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "email",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "sort": 4,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "email",
+        "table": "contacts",
+        "data_type": "varchar",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "contacts",
+      "field": "title",
+      "type": "string",
+      "meta": {
+        "collection": "contacts",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "title",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "sort": 5,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "title",
+        "table": "contacts",
+        "data_type": "varchar",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "contacts",
+      "field": "client",
+      "type": "string",
+      "meta": {
+        "collection": "contacts",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "client",
+        "group": null,
+        "hidden": true,
+        "interface": "select-dropdown-m2o",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "sort": 6,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "client",
+        "table": "contacts",
+        "data_type": "char",
+        "default_value": null,
+        "max_length": 36,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": "clients",
+        "foreign_key_column": "id"
+      }
+    },
+    {
+      "collection": "directus_users",
+      "field": "agency",
+      "type": "string",
+      "meta": {
+        "collection": "directus_users",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "agency",
+        "group": null,
+        "hidden": true,
+        "interface": "select-dropdown-m2o",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "sort": 1,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "agency",
+        "table": "directus_users",
+        "data_type": "char",
+        "default_value": null,
+        "max_length": 36,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": "agencies",
+        "foreign_key_column": "id"
+      }
+    },
+    {
+      "collection": "projects",
+      "field": "id",
+      "type": "integer",
+      "meta": {
+        "collection": "projects",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "id",
+        "group": null,
+        "hidden": true,
+        "interface": "input",
+        "note": null,
+        "options": null,
+        "readonly": true,
+        "required": false,
+        "sort": 1,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "id",
+        "table": "projects",
+        "data_type": "integer",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_primary_key": true,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": true,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "projects",
+      "field": "name",
+      "type": "string",
+      "meta": {
+        "collection": "projects",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "name",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "sort": 2,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "name",
+        "table": "projects",
+        "data_type": "varchar",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "projects",
+      "field": "client",
+      "type": "string",
+      "meta": {
+        "collection": "projects",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "client",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown-m2o",
+        "note": null,
+        "options": {
+          "template": "{{name}}"
+        },
+        "readonly": false,
+        "required": false,
+        "sort": 3,
+        "special": [
+          "m2o"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "client",
+        "table": "projects",
+        "data_type": "char",
+        "default_value": null,
+        "max_length": 36,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": "clients",
+        "foreign_key_column": "id"
+      }
+    },
+    {
+      "collection": "projects",
+      "field": "type",
+      "type": "string",
+      "meta": {
+        "collection": "projects",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "type",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown",
+        "note": null,
+        "options": {
+          "choices": [
+            {
+              "text": "Campaign",
+              "value": "campaign",
+              "icon": "campaign"
+            },
+            {
+              "text": "Always On",
+              "value": "always-on",
+              "icon": "time_auto"
+            }
+          ]
+        },
+        "readonly": false,
+        "required": false,
+        "sort": 4,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "type",
+        "table": "projects",
+        "data_type": "varchar",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "projects",
+      "field": "clien",
+      "type": "string",
+      "meta": {
+        "collection": "projects",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "clien",
+        "group": null,
+        "hidden": true,
+        "interface": "select-dropdown-m2o",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "sort": 5,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "clien",
+        "table": "projects",
+        "data_type": "char",
+        "default_value": null,
+        "max_length": 36,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "questions",
+      "field": "id",
+      "type": "integer",
+      "meta": {
+        "collection": "questions",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "id",
+        "group": null,
+        "hidden": true,
+        "interface": "input",
+        "note": null,
+        "options": null,
+        "readonly": true,
+        "required": false,
+        "sort": 1,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "id",
+        "table": "questions",
+        "data_type": "integer",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_primary_key": true,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": true,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "questions",
+      "field": "user_created",
+      "type": "string",
+      "meta": {
+        "collection": "questions",
+        "conditions": null,
+        "display": "user",
+        "display_options": null,
+        "field": "user_created",
+        "group": null,
+        "hidden": true,
+        "interface": "select-dropdown-m2o",
+        "note": null,
+        "options": {
+          "template": "{{avatar.$thumbnail}} {{first_name}} {{last_name}}"
+        },
+        "readonly": true,
+        "required": false,
+        "sort": 2,
+        "special": [
+          "user-created"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "name": "user_created",
+        "table": "questions",
+        "data_type": "char",
+        "default_value": null,
+        "max_length": 36,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": "directus_users",
+        "foreign_key_column": "id"
+      }
+    },
+    {
+      "collection": "questions",
+      "field": "date_created",
+      "type": "timestamp",
+      "meta": {
+        "collection": "questions",
+        "conditions": null,
+        "display": "datetime",
+        "display_options": {
+          "relative": true
+        },
+        "field": "date_created",
+        "group": null,
+        "hidden": true,
+        "interface": "datetime",
+        "note": null,
+        "options": null,
+        "readonly": true,
+        "required": false,
+        "sort": 3,
+        "special": [
+          "cast-timestamp",
+          "date-created"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "name": "date_created",
+        "table": "questions",
+        "data_type": "datetime",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "questions",
+      "field": "user_updated",
+      "type": "string",
+      "meta": {
+        "collection": "questions",
+        "conditions": null,
+        "display": "user",
+        "display_options": null,
+        "field": "user_updated",
+        "group": null,
+        "hidden": true,
+        "interface": "select-dropdown-m2o",
+        "note": null,
+        "options": {
+          "template": "{{avatar.$thumbnail}} {{first_name}} {{last_name}}"
+        },
+        "readonly": true,
+        "required": false,
+        "sort": 4,
+        "special": [
+          "user-updated"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "name": "user_updated",
+        "table": "questions",
+        "data_type": "char",
+        "default_value": null,
+        "max_length": 36,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": "directus_users",
+        "foreign_key_column": "id"
+      }
+    },
+    {
+      "collection": "questions",
+      "field": "date_updated",
+      "type": "timestamp",
+      "meta": {
+        "collection": "questions",
+        "conditions": null,
+        "display": "datetime",
+        "display_options": {
+          "relative": true
+        },
+        "field": "date_updated",
+        "group": null,
+        "hidden": true,
+        "interface": "datetime",
+        "note": null,
+        "options": null,
+        "readonly": true,
+        "required": false,
+        "sort": 5,
+        "special": [
+          "cast-timestamp",
+          "date-updated"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "half"
+      },
+      "schema": {
+        "name": "date_updated",
+        "table": "questions",
+        "data_type": "datetime",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "questions",
+      "field": "title",
+      "type": "string",
+      "meta": {
+        "collection": "questions",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "title",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "sort": 6,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "title",
+        "table": "questions",
+        "data_type": "varchar",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "questions",
+      "field": "type",
+      "type": "string",
+      "meta": {
+        "collection": "questions",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "type",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown",
+        "note": null,
+        "options": {
+          "choices": [
+            {
+              "text": "Stars",
+              "value": "stars",
+              "icon": "stars"
+            },
+            {
+              "text": "Select One",
+              "value": "select-one",
+              "icon": "select_check_box"
+            },
+            {
+              "text": "Text",
+              "value": "text",
+              "icon": "text_snippet"
+            }
+          ]
+        },
+        "readonly": false,
+        "required": false,
+        "sort": 7,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "type",
+        "table": "questions",
+        "data_type": "varchar",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "questions",
+      "field": "response",
+      "type": "text",
+      "meta": {
+        "collection": "questions",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "response",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "sort": 8,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "response",
+        "table": "questions",
+        "data_type": "text",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "surveys",
+      "field": "id",
+      "type": "uuid",
+      "meta": {
+        "collection": "surveys",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "id",
+        "group": null,
+        "hidden": true,
+        "interface": "input",
+        "note": null,
+        "options": null,
+        "readonly": true,
+        "required": false,
+        "sort": 1,
+        "special": [
+          "uuid"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "id",
+        "table": "surveys",
+        "data_type": "char",
+        "default_value": null,
+        "max_length": 36,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": true,
+        "is_primary_key": true,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    }
+  ],
+  "relations": [
+    {
+      "collection": "agencies",
+      "field": "director_of_client_services",
+      "related_collection": "directus_users",
+      "meta": {
+        "junction_field": null,
+        "many_collection": "agencies",
+        "many_field": "director_of_client_services",
+        "one_allowed_collections": null,
+        "one_collection": "directus_users",
+        "one_collection_field": null,
+        "one_deselect_action": "nullify",
+        "one_field": null,
+        "sort_field": null
+      },
+      "schema": {
+        "table": "agencies",
+        "column": "director_of_client_services",
+        "foreign_key_table": "directus_users",
+        "foreign_key_column": "id",
+        "constraint_name": null,
+        "on_update": "NO ACTION",
+        "on_delete": "SET NULL"
+      }
+    },
+    {
+      "collection": "clients",
+      "field": "agency",
+      "related_collection": "agencies",
+      "meta": {
+        "junction_field": null,
+        "many_collection": "clients",
+        "many_field": "agency",
+        "one_allowed_collections": null,
+        "one_collection": "agencies",
+        "one_collection_field": null,
+        "one_deselect_action": "nullify",
+        "one_field": "clients",
+        "sort_field": null
+      },
+      "schema": {
+        "table": "clients",
+        "column": "agency",
+        "foreign_key_table": "agencies",
+        "foreign_key_column": "id",
+        "constraint_name": null,
+        "on_update": "NO ACTION",
+        "on_delete": "SET NULL"
+      }
+    },
+    {
+      "collection": "contacts",
+      "field": "client",
+      "related_collection": "clients",
+      "meta": {
+        "junction_field": null,
+        "many_collection": "contacts",
+        "many_field": "client",
+        "one_allowed_collections": null,
+        "one_collection": "clients",
+        "one_collection_field": null,
+        "one_deselect_action": "nullify",
+        "one_field": "contacts",
+        "sort_field": null
+      },
+      "schema": {
+        "table": "contacts",
+        "column": "client",
+        "foreign_key_table": "clients",
+        "foreign_key_column": "id",
+        "constraint_name": null,
+        "on_update": "NO ACTION",
+        "on_delete": "SET NULL"
+      }
+    },
+    {
+      "collection": "directus_users",
+      "field": "agency",
+      "related_collection": "agencies",
+      "meta": {
+        "junction_field": null,
+        "many_collection": "directus_users",
+        "many_field": "agency",
+        "one_allowed_collections": null,
+        "one_collection": "agencies",
+        "one_collection_field": null,
+        "one_deselect_action": "nullify",
+        "one_field": "account_managers",
+        "sort_field": null
+      },
+      "schema": {
+        "table": "directus_users",
+        "column": "agency",
+        "foreign_key_table": "agencies",
+        "foreign_key_column": "id",
+        "constraint_name": null,
+        "on_update": "NO ACTION",
+        "on_delete": "SET NULL"
+      }
+    },
+    {
+      "collection": "projects",
+      "field": "client",
+      "related_collection": "clients",
+      "meta": {
+        "junction_field": null,
+        "many_collection": "projects",
+        "many_field": "client",
+        "one_allowed_collections": null,
+        "one_collection": "clients",
+        "one_collection_field": null,
+        "one_deselect_action": "nullify",
+        "one_field": "projects",
+        "sort_field": null
+      },
+      "schema": {
+        "table": "projects",
+        "column": "client",
+        "foreign_key_table": "clients",
+        "foreign_key_column": "id",
+        "constraint_name": null,
+        "on_update": "NO ACTION",
+        "on_delete": "SET NULL"
+      }
+    },
+    {
+      "collection": "questions",
+      "field": "user_created",
+      "related_collection": "directus_users",
+      "meta": {
+        "junction_field": null,
+        "many_collection": "questions",
+        "many_field": "user_created",
+        "one_allowed_collections": null,
+        "one_collection": "directus_users",
+        "one_collection_field": null,
+        "one_deselect_action": "nullify",
+        "one_field": null,
+        "sort_field": null
+      },
+      "schema": {
+        "table": "questions",
+        "column": "user_created",
+        "foreign_key_table": "directus_users",
+        "foreign_key_column": "id",
+        "constraint_name": null,
+        "on_update": "NO ACTION",
+        "on_delete": "NO ACTION"
+      }
+    },
+    {
+      "collection": "questions",
+      "field": "user_updated",
+      "related_collection": "directus_users",
+      "meta": {
+        "junction_field": null,
+        "many_collection": "questions",
+        "many_field": "user_updated",
+        "one_allowed_collections": null,
+        "one_collection": "directus_users",
+        "one_collection_field": null,
+        "one_deselect_action": "nullify",
+        "one_field": null,
+        "sort_field": null
+      },
+      "schema": {
+        "table": "questions",
+        "column": "user_updated",
+        "foreign_key_table": "directus_users",
+        "foreign_key_column": "id",
+        "constraint_name": null,
+        "on_update": "NO ACTION",
+        "on_delete": "NO ACTION"
+      }
+    }
+  ]
+}
