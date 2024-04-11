@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "id": "f3d74996-7d84-45e5-9f6a-56565a0b4ad9",
+    "first_name": "Gare",
+    "last_name": "Bear",
+    "email": "gb@gb.com",
+    "title": "Care Team Officer",
+    "client": "275f1d53-6dd9-49f2-9b0f-dd6f381aced0"
+  }
+]

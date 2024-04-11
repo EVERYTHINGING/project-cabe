@@ -100,31 +100,6 @@
     }
   },
   {
-    "collection": "projects",
-    "field": "client",
-    "related_collection": "clients",
-    "schema": {
-      "table": "projects",
-      "column": "client",
-      "foreign_key_table": "clients",
-      "foreign_key_column": "id",
-      "on_update": "NO ACTION",
-      "on_delete": "SET NULL",
-      "constraint_name": null
-    },
-    "meta": {
-      "many_collection": "projects",
-      "many_field": "client",
-      "one_collection": "clients",
-      "one_field": "projects",
-      "one_collection_field": null,
-      "one_allowed_collections": null,
-      "junction_field": null,
-      "sort_field": null,
-      "one_deselect_action": "nullify"
-    }
-  },
-  {
     "collection": "clients",
     "field": "agency",
     "related_collection": "agencies",
@@ -167,6 +142,56 @@
       "many_field": "agency",
       "one_collection": "agencies",
       "one_field": "account_managers",
+      "one_collection_field": null,
+      "one_allowed_collections": null,
+      "junction_field": null,
+      "sort_field": null,
+      "one_deselect_action": "nullify"
+    }
+  },
+  {
+    "collection": "responses",
+    "field": "survey",
+    "related_collection": "surveys",
+    "schema": {
+      "table": "responses",
+      "column": "survey",
+      "foreign_key_table": "surveys",
+      "foreign_key_column": "id",
+      "on_update": "NO ACTION",
+      "on_delete": "SET NULL",
+      "constraint_name": null
+    },
+    "meta": {
+      "many_collection": "responses",
+      "many_field": "survey",
+      "one_collection": "surveys",
+      "one_field": null,
+      "one_collection_field": null,
+      "one_allowed_collections": null,
+      "junction_field": null,
+      "sort_field": null,
+      "one_deselect_action": "nullify"
+    }
+  },
+  {
+    "collection": "projects",
+    "field": "client",
+    "related_collection": "clients",
+    "schema": {
+      "table": "projects",
+      "column": "client",
+      "foreign_key_table": "clients",
+      "foreign_key_column": "id",
+      "on_update": "NO ACTION",
+      "on_delete": "SET NULL",
+      "constraint_name": null
+    },
+    "meta": {
+      "many_collection": "projects",
+      "many_field": "client",
+      "one_collection": "clients",
+      "one_field": "projects",
       "one_collection_field": null,
       "one_allowed_collections": null,
       "junction_field": null,

@@ -1,1 +1,13 @@
-[]
+[
+  {
+    "id": "275f1d53-6dd9-49f2-9b0f-dd6f381aced0",
+    "name": "Client 1",
+    "agency": null,
+    "contacts": [
+      "f3d74996-7d84-45e5-9f6a-56565a0b4ad9"
+    ],
+    "projects": [
+      2
+    ]
+  }
+]

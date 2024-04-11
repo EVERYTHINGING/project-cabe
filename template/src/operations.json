@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "7fa3d701-f4c5-45a7-b25d-c7a3fae29aca",
+    "name": "Create Data",
+    "key": "item_create_7pp0u",
+    "type": "item-create",
+    "position_x": 19,
+    "position_y": 1,
+    "options": {
+      "collection": "responses",
+      "payload": {
+        "data": "{{$trigger.body}}"
+      },
+      "permissions": "$full"
+    },
+    "resolve": null,
+    "reject": null,
+    "flow": "a4d3386d-8b9f-45cb-b623-01012c6ce83a",
+    "date_created": "2024-04-11T03:09:49",
+    "user_created": "b9cc771c-003d-4333-a695-611c38fe5f8a"
+  }
+]

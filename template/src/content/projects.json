@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "id": 1,
+    "name": "Project 1",
+    "client": null,
+    "type": "always-on"
+  },
+  {
+    "id": 2,
+    "name": "Project 2",
+    "client": "275f1d53-6dd9-49f2-9b0f-dd6f381aced0",
+    "type": "always-on"
+  }
+]
