@@ -1,1 +1,92 @@
-[]
+[
+  {
+    "id": "1a025d1c-6e2b-4ed3-bd2e-d0b7256a208a",
+    "dashboard": "cecf4e94-41bd-48ce-b16a-f4d8eea74241",
+    "name": "Surveys Sent",
+    "icon": "call_made",
+    "color": null,
+    "show_header": true,
+    "note": null,
+    "type": "metric",
+    "position_x": 3,
+    "position_y": 2,
+    "width": 21,
+    "height": 9,
+    "options": {
+      "collection": "responses",
+      "field": "id",
+      "function": "count",
+      "filter": null,
+      "sortField": "id"
+    },
+    "date_created": "2024-04-14T21:38:16.758Z",
+    "user_created": "b9cc771c-003d-4333-a695-611c38fe5f8a"
+  },
+  {
+    "id": "303ac034-7e33-4103-b4b0-dedbfc4ae87a",
+    "dashboard": "cecf4e94-41bd-48ce-b16a-f4d8eea74241",
+    "name": "Survey Responses Received",
+    "icon": "call_received",
+    "color": null,
+    "show_header": true,
+    "note": null,
+    "type": "metric",
+    "position_x": 3,
+    "position_y": 12,
+    "width": 21,
+    "height": 9,
+    "options": {
+      "collection": "responses",
+      "field": "id",
+      "function": "count",
+      "filter": null,
+      "sortField": "id"
+    },
+    "date_created": "2024-04-14T23:37:27.402Z",
+    "user_created": "b9cc771c-003d-4333-a695-611c38fe5f8a"
+  },
+  {
+    "id": "a4f09c53-fabe-4a2d-ac30-8ed9ab5d82d6",
+    "dashboard": "cecf4e94-41bd-48ce-b16a-f4d8eea74241",
+    "name": "Average Star Rating",
+    "icon": "star",
+    "color": null,
+    "show_header": true,
+    "note": null,
+    "type": "meter",
+    "position_x": 3,
+    "position_y": 22,
+    "width": 21,
+    "height": 18,
+    "options": {
+      "collection": "responses",
+      "field": "data",
+      "fn": "count",
+      "max": 20
+    },
+    "date_created": "2024-04-14T23:40:35.634Z",
+    "user_created": "b9cc771c-003d-4333-a695-611c38fe5f8a"
+  },
+  {
+    "id": "fe550dce-ac93-4646-96ac-b0e074c76e6a",
+    "dashboard": "cecf4e94-41bd-48ce-b16a-f4d8eea74241",
+    "name": "Total Contacts",
+    "icon": "contact_page",
+    "color": null,
+    "show_header": true,
+    "note": null,
+    "type": "metric",
+    "position_x": 25,
+    "position_y": 2,
+    "width": 14,
+    "height": 9,
+    "options": {
+      "collection": "contacts",
+      "field": "id",
+      "function": "countDistinct",
+      "sortField": "id"
+    },
+    "date_created": "2024-04-14T23:42:17.392Z",
+    "user_created": "b9cc771c-003d-4333-a695-611c38fe5f8a"
+  }
+]

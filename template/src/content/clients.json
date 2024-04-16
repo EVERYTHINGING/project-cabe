@@ -9,5 +9,17 @@
     "projects": [
       2
     ]
+  },
+  {
+    "id": "3f58ba11-4b14-4913-bfe5-4459abb95d8b",
+    "name": "Nike",
+    "agency": "db5014c5-c149-4492-993c-2745685ce911",
+    "contacts": [
+      "94649b9b-b5b9-425b-9482-b227068c6537",
+      "cd6a6349-e342-4535-b7ad-bdb2dac426ab"
+    ],
+    "projects": [
+      1
+    ]
   }
 ]

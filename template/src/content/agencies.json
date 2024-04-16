@@ -3,9 +3,12 @@
     "id": "db5014c5-c149-4492-993c-2745685ce911",
     "name": "Agency 1",
     "director_of_client_services": "c300d834-fcf4-4b05-a336-d4fed567deab",
-    "clients": [],
+    "clients": [
+      "3f58ba11-4b14-4913-bfe5-4459abb95d8b"
+    ],
     "account_managers": [
       "c71e9879-87e5-4959-93f2-0841fb23cbaa"
-    ]
+    ],
+    "surveys": []
   }
 ]

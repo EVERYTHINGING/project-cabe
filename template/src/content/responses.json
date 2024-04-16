@@ -2,28 +2,193 @@
   {
     "id": 1,
     "date_created": "2024-04-11T03:12:25.751Z",
-    "survey": null,
     "data": {
       "surveyId": "1",
       "rating": "2"
-    }
+    },
+    "survey": null,
+    "contact": null
   },
   {
     "id": 2,
     "date_created": "2024-04-11T03:53:56.782Z",
-    "survey": null,
     "data": {
       "surveyId": "1",
       "rating": "5"
-    }
+    },
+    "survey": null,
+    "contact": null
   },
   {
     "id": 3,
     "date_created": "2024-04-11T03:54:28.436Z",
-    "survey": null,
     "data": {
       "surveyId": "1",
       "rating": "5"
-    }
+    },
+    "survey": null,
+    "contact": null
+  },
+  {
+    "id": 4,
+    "date_created": "2024-04-11T04:12:47.291Z",
+    "data": {
+      "surveyId": "1",
+      "rating": "5"
+    },
+    "survey": null,
+    "contact": null
+  },
+  {
+    "id": 5,
+    "date_created": "2024-04-11T04:14:31.504Z",
+    "data": {
+      "surveyId": "1",
+      "rating": "5"
+    },
+    "survey": null,
+    "contact": null
+  },
+  {
+    "id": 6,
+    "date_created": "2024-04-11T04:14:38.491Z",
+    "data": {
+      "surveyId": "1",
+      "rating": "5"
+    },
+    "survey": null,
+    "contact": null
+  },
+  {
+    "id": 7,
+    "date_created": "2024-04-11T04:14:44.984Z",
+    "data": {
+      "surveyId": "1",
+      "rating": "5"
+    },
+    "survey": null,
+    "contact": null
+  },
+  {
+    "id": 8,
+    "date_created": "2024-04-11T04:19:37.996Z",
+    "data": {
+      "surveyId": "1",
+      "rating": "5"
+    },
+    "survey": null,
+    "contact": null
+  },
+  {
+    "id": 9,
+    "date_created": "2024-04-11T04:19:55.900Z",
+    "data": {
+      "surveyId": "1",
+      "rating": "2"
+    },
+    "survey": "1c9242b5-733b-4f14-b268-470a9798d0e8",
+    "contact": "cd6a6349-e342-4535-b7ad-bdb2dac426ab"
+  },
+  {
+    "id": 10,
+    "date_created": "2024-04-11T04:34:37.021Z",
+    "data": {
+      "surveyId": null,
+      "rating": "4"
+    },
+    "survey": "1c9242b5-733b-4f14-b268-470a9798d0e8",
+    "contact": "cd6a6349-e342-4535-b7ad-bdb2dac426ab"
+  },
+  {
+    "id": 11,
+    "date_created": "2024-04-11T04:35:19.180Z",
+    "data": {
+      "surveyId": null,
+      "rating": "5"
+    },
+    "survey": "1c9242b5-733b-4f14-b268-470a9798d0e8",
+    "contact": "cd6a6349-e342-4535-b7ad-bdb2dac426ab"
+  },
+  {
+    "id": 12,
+    "date_created": "2024-04-11T04:36:01.197Z",
+    "data": {
+      "surveyId": null,
+      "rating": "3"
+    },
+    "survey": "1c9242b5-733b-4f14-b268-470a9798d0e8",
+    "contact": "cd6a6349-e342-4535-b7ad-bdb2dac426ab"
+  },
+  {
+    "id": 13,
+    "date_created": "2024-04-11T04:36:41.637Z",
+    "data": {
+      "surveyId": "10",
+      "rating": "5"
+    },
+    "survey": "1c9242b5-733b-4f14-b268-470a9798d0e8",
+    "contact": "cd6a6349-e342-4535-b7ad-bdb2dac426ab"
+  },
+  {
+    "id": 14,
+    "date_created": "2024-04-11T15:52:24.743Z",
+    "data": {
+      "surveyId": "10",
+      "rating": "3"
+    },
+    "survey": "1c9242b5-733b-4f14-b268-470a9798d0e8",
+    "contact": "94649b9b-b5b9-425b-9482-b227068c6537"
+  },
+  {
+    "id": 15,
+    "date_created": "2024-04-11T16:14:56.050Z",
+    "data": {
+      "surveyId": "10",
+      "rating": "3"
+    },
+    "survey": null,
+    "contact": null
+  },
+  {
+    "id": 16,
+    "date_created": "2024-04-14T23:12:37.675Z",
+    "data": {
+      "surveyId": null,
+      "stars1": "5",
+      "agree1": "strongly agree",
+      "agree2": "completely agree",
+      "agree4": "somewhat agree",
+      "agree5": "somewhat agree",
+      "agree6": "strongly disagree",
+      "agree7": "completely agree",
+      "agree8": "completely agree",
+      "stars2": "10",
+      "likely1": "somewhat likely"
+    },
+    "survey": null,
+    "contact": null
+  },
+  {
+    "id": 17,
+    "date_created": "2024-04-14T23:13:57.657Z",
+    "data": {
+      "surveyId": null,
+      "stars1": "5",
+      "openended1": "awdwadawd",
+      "agree1": "strongly disagree",
+      "agree2": "strongly agree",
+      "agree3": "somewhat agree",
+      "agree4": "strongly agree",
+      "agree5": "strongly agree",
+      "agree6": "somewhat agree",
+      "agree7": "strongly agree",
+      "agree8": "strongly agree",
+      "stars2": "10",
+      "likely1": "completely likely",
+      "openended2": "dawdawdawd",
+      "openended3": "awdawdwadwd"
+    },
+    "survey": "1c9242b5-733b-4f14-b268-470a9798d0e8",
+    "contact": null
   }
 ]

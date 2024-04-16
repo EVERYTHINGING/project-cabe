@@ -5,7 +5,7 @@
   "files": [
     "src"
   ],
-  "name": "directus-template-cabe",
-  "templateName": "cabe",
+  "name": "directus-template-directus-template-cabe",
+  "templateName": "directus-template-cabe",
   "version": "1.0.0"
 }

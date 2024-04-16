@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "id": "cecf4e94-41bd-48ce-b16a-f4d8eea74241",
+    "name": "Client Dashboard",
+    "icon": "space_dashboard",
+    "note": null,
+    "date_created": "2024-04-11T16:16:10.186Z",
+    "user_created": "b9cc771c-003d-4333-a695-611c38fe5f8a",
+    "color": null,
+    "panels": null
+  }
+]

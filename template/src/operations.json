@@ -1,5 +1,80 @@
 [
   {
+    "id": "141cd683-fc50-46c3-b986-6362c2f2c2f8",
+    "name": "Get Survey Contacts",
+    "key": "get_survey_contacts",
+    "type": "item-read",
+    "position_x": 19,
+    "position_y": 1,
+    "options": {
+      "collection": "surveys",
+      "key": [],
+      "query": {
+        "fields": [
+          "contacts"
+        ],
+        "filter": {
+          "id": {
+            "_in": "{{$trigger.body.keys}}"
+          }
+        }
+      },
+      "permissions": "$full"
+    },
+    "resolve": "7e53e067-b9a4-4487-a2ae-f5ce6ad4db40",
+    "reject": null,
+    "flow": "c58b1a71-d5a6-490b-8f82-1d1605da3974",
+    "date_created": "2024-04-15T00:09:42",
+    "user_created": "b9cc771c-003d-4333-a695-611c38fe5f8a"
+  },
+  {
+    "id": "1f77841c-161c-4c9a-bc62-331dc40086b7",
+    "name": "Elastic Email",
+    "key": "elastic_email",
+    "type": "request",
+    "position_x": 55,
+    "position_y": 1,
+    "options": {
+      "method": "POST",
+      "headers": [
+        {
+          "header": "Authorization",
+          "value": "Bearer 89FBC611DD3460AE208C5DC7C521E7D283DC954B49EA625E9D2CDC19D343CC6979FA22791679B0BB30B1E6F31B7BFADD"
+        }
+      ],
+      "body": "{\n  \"Recipients\": [\n    {\n      \"Email\": \"mail@example.com\",\n      \"Fields\": {\n        \"city\": \"New York\",\n        \"age\": \"34\"\n      }\n    }\n  ],\n  \"Content\": {\n    \"Body\": [\n      {\n        \"ContentType\": \"HTML\",\n        \"Content\": \"string\",\n        \"Charset\": \"string\"\n      }\n    ],\n    \"Merge\": {\n      \"city\": \"New York\",\n      \"age\": \"34\"\n    },\n    \"Attachments\": [\n      {\n        \"BinaryContent\": \"string\",\n        \"Name\": \"string\",\n        \"ContentType\": \"string\",\n        \"Size\": \"100\"\n      }\n    ],\n    \"Headers\": {\n      \"city\": \"New York\",\n      \"age\": \"34\"\n    },\n    \"Postback\": \"string\",\n    \"EnvelopeFrom\": \"John Doe <email@domain.com>\",\n    \"From\": \"John Doe <email@domain.com>\",\n    \"ReplyTo\": \"John Doe <email@domain.com>\",\n    \"Subject\": \"Hello!\",\n    \"TemplateName\": \"Template01\",\n    \"AttachFiles\": \"[ \\\"preuploaded.jpg\\\" ]\",\n    \"Utm\": {\n      \"Source\": \"string\",\n      \"Medium\": \"string\",\n      \"Campaign\": \"string\",\n      \"Content\": \"string\"\n    }\n  },\n  \"Options\": {\n    \"TimeOffset\": null,\n    \"PoolName\": \"My Custom Pool\",\n    \"ChannelName\": \"Channel01\",\n    \"Encoding\": \"UserProvided\",\n    \"TrackOpens\": \"true\",\n    \"TrackClicks\": \"true\"\n  }\n}"
+    },
+    "resolve": null,
+    "reject": null,
+    "flow": "c58b1a71-d5a6-490b-8f82-1d1605da3974",
+    "date_created": "2024-04-15T00:11:26",
+    "user_created": "b9cc771c-003d-4333-a695-611c38fe5f8a"
+  },
+  {
+    "id": "7e53e067-b9a4-4487-a2ae-f5ce6ad4db40",
+    "name": "Get Emails",
+    "key": "get_emails",
+    "type": "item-read",
+    "position_x": 37,
+    "position_y": 1,
+    "options": {
+      "collection": "contacts",
+      "query": {
+        "fields": [
+          "email"
+        ]
+      },
+      "key": [
+        "{{$last[0].contacts}}"
+      ]
+    },
+    "resolve": null,
+    "reject": null,
+    "flow": "c58b1a71-d5a6-490b-8f82-1d1605da3974",
+    "date_created": "2024-04-15T00:17:50",
+    "user_created": "b9cc771c-003d-4333-a695-611c38fe5f8a"
+  },
+  {
     "id": "7fa3d701-f4c5-45a7-b25d-c7a3fae29aca",
     "name": "Create Data",
     "key": "item_create_7pp0u",

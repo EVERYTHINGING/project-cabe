@@ -133,7 +133,7 @@
         "note": null,
         "preview_url": null,
         "singleton": false,
-        "sort": 2,
+        "sort": 3,
         "sort_field": null,
         "translations": null,
         "unarchive_value": null,
@@ -161,7 +161,7 @@
         "note": null,
         "preview_url": null,
         "singleton": false,
-        "sort": 1,
+        "sort": 2,
         "sort_field": null,
         "translations": null,
         "unarchive_value": null,
@@ -169,6 +169,62 @@
       },
       "schema": {
         "name": "responses"
+      }
+    },
+    {
+      "collection": "survey_template",
+      "meta": {
+        "accountability": "all",
+        "archive_app_filter": true,
+        "archive_field": null,
+        "archive_value": null,
+        "collapse": "open",
+        "collection": "survey_template",
+        "color": null,
+        "display_template": null,
+        "group": null,
+        "hidden": false,
+        "icon": null,
+        "item_duplication_fields": null,
+        "note": null,
+        "preview_url": null,
+        "singleton": false,
+        "sort": 2,
+        "sort_field": null,
+        "translations": null,
+        "unarchive_value": null,
+        "versioning": false
+      },
+      "schema": {
+        "name": "survey_template"
+      }
+    },
+    {
+      "collection": "survey_template_questions",
+      "meta": {
+        "accountability": "all",
+        "archive_app_filter": true,
+        "archive_field": null,
+        "archive_value": null,
+        "collapse": "open",
+        "collection": "survey_template_questions",
+        "color": null,
+        "display_template": null,
+        "group": null,
+        "hidden": true,
+        "icon": "import_export",
+        "item_duplication_fields": null,
+        "note": null,
+        "preview_url": null,
+        "singleton": false,
+        "sort": 3,
+        "sort_field": null,
+        "translations": null,
+        "unarchive_value": null,
+        "versioning": false
+      },
+      "schema": {
+        "name": "survey_template_questions"
       }
     },
     {
@@ -197,6 +253,34 @@
       },
       "schema": {
         "name": "surveys"
+      }
+    },
+    {
+      "collection": "surveys_contacts",
+      "meta": {
+        "accountability": "all",
+        "archive_app_filter": true,
+        "archive_field": null,
+        "archive_value": null,
+        "collapse": "open",
+        "collection": "surveys_contacts",
+        "color": null,
+        "display_template": null,
+        "group": null,
+        "hidden": true,
+        "icon": "import_export",
+        "item_duplication_fields": null,
+        "note": null,
+        "preview_url": null,
+        "singleton": false,
+        "sort": null,
+        "sort_field": null,
+        "translations": null,
+        "unarchive_value": null,
+        "versioning": false
+      },
+      "schema": {
+        "name": "surveys_contacts"
       }
     }
   ],
@@ -402,6 +486,35 @@
         "readonly": false,
         "required": false,
         "sort": 4,
+        "special": [
+          "o2m"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      }
+    },
+    {
+      "collection": "agencies",
+      "field": "surveys",
+      "type": "alias",
+      "meta": {
+        "collection": "agencies",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "surveys",
+        "group": null,
+        "hidden": false,
+        "interface": "list-o2m",
+        "note": null,
+        "options": {
+          "template": "{{name}}"
+        },
+        "readonly": false,
+        "required": false,
+        "sort": 6,
         "special": [
           "o2m"
         ],
@@ -820,7 +933,7 @@
         "display_options": null,
         "field": "client",
         "group": null,
-        "hidden": true,
+        "hidden": false,
         "interface": "select-dropdown-m2o",
         "note": null,
         "options": null,
@@ -849,6 +962,66 @@
         "has_auto_increment": false,
         "foreign_key_table": "clients",
         "foreign_key_column": "id"
+      }
+    },
+    {
+      "collection": "contacts",
+      "field": "responses",
+      "type": "alias",
+      "meta": {
+        "collection": "contacts",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "responses",
+        "group": null,
+        "hidden": false,
+        "interface": "list-o2m",
+        "note": null,
+        "options": {
+          "enableCreate": false,
+          "enableSelect": false,
+          "template": "{{date_created}} for {{survey.name}}"
+        },
+        "readonly": true,
+        "required": false,
+        "sort": 7,
+        "special": [
+          "o2m"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      }
+    },
+    {
+      "collection": "contacts",
+      "field": "surveys",
+      "type": "alias",
+      "meta": {
+        "collection": "contacts",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "surveys",
+        "group": null,
+        "hidden": false,
+        "interface": "list-m2m",
+        "note": null,
+        "options": {
+          "template": "{{surveys_id.name}}"
+        },
+        "readonly": false,
+        "required": false,
+        "sort": 8,
+        "special": [
+          "m2m"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
       }
     },
     {
@@ -1411,48 +1584,6 @@
       }
     },
     {
-      "collection": "questions",
-      "field": "response",
-      "type": "text",
-      "meta": {
-        "collection": "questions",
-        "conditions": null,
-        "display": null,
-        "display_options": null,
-        "field": "response",
-        "group": null,
-        "hidden": false,
-        "interface": "input",
-        "note": null,
-        "options": null,
-        "readonly": false,
-        "required": false,
-        "sort": 8,
-        "special": null,
-        "translations": null,
-        "validation": null,
-        "validation_message": null,
-        "width": "full"
-      },
-      "schema": {
-        "name": "response",
-        "table": "questions",
-        "data_type": "text",
-        "default_value": null,
-        "max_length": null,
-        "numeric_precision": null,
-        "numeric_scale": null,
-        "is_nullable": true,
-        "is_unique": false,
-        "is_primary_key": false,
-        "is_generated": false,
-        "generation_expression": null,
-        "has_auto_increment": false,
-        "foreign_key_table": null,
-        "foreign_key_column": null
-      }
-    },
-    {
       "collection": "responses",
       "field": "id",
       "type": "integer",
@@ -1521,7 +1652,7 @@
         "translations": null,
         "validation": null,
         "validation_message": null,
-        "width": "half"
+        "width": "full"
       },
       "schema": {
         "name": "date_created",
@@ -1539,52 +1670,6 @@
         "has_auto_increment": false,
         "foreign_key_table": null,
         "foreign_key_column": null
-      }
-    },
-    {
-      "collection": "responses",
-      "field": "survey",
-      "type": "string",
-      "meta": {
-        "collection": "responses",
-        "conditions": null,
-        "display": null,
-        "display_options": null,
-        "field": "survey",
-        "group": null,
-        "hidden": false,
-        "interface": "select-dropdown-m2o",
-        "note": null,
-        "options": {
-          "template": "{{id}}"
-        },
-        "readonly": false,
-        "required": false,
-        "sort": 3,
-        "special": [
-          "m2o"
-        ],
-        "translations": null,
-        "validation": null,
-        "validation_message": null,
-        "width": "full"
-      },
-      "schema": {
-        "name": "survey",
-        "table": "responses",
-        "data_type": "char",
-        "default_value": null,
-        "max_length": 36,
-        "numeric_precision": null,
-        "numeric_scale": null,
-        "is_nullable": true,
-        "is_unique": false,
-        "is_primary_key": false,
-        "is_generated": false,
-        "generation_expression": null,
-        "has_auto_increment": false,
-        "foreign_key_table": "surveys",
-        "foreign_key_column": "id"
       }
     },
     {
@@ -1619,6 +1704,404 @@
         "data_type": "json",
         "default_value": null,
         "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "responses",
+      "field": "survey",
+      "type": "string",
+      "meta": {
+        "collection": "responses",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "survey",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown-m2o",
+        "note": null,
+        "options": {
+          "template": "{{name}}"
+        },
+        "readonly": false,
+        "required": false,
+        "sort": 3,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "survey",
+        "table": "responses",
+        "data_type": "char",
+        "default_value": null,
+        "max_length": 36,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": "surveys",
+        "foreign_key_column": "id"
+      }
+    },
+    {
+      "collection": "responses",
+      "field": "contact",
+      "type": "string",
+      "meta": {
+        "collection": "responses",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "contact",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown-m2o",
+        "note": null,
+        "options": {
+          "template": "{{first_name}} {{last_name}}"
+        },
+        "readonly": false,
+        "required": false,
+        "sort": 5,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "contact",
+        "table": "responses",
+        "data_type": "char",
+        "default_value": null,
+        "max_length": 36,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": "contacts",
+        "foreign_key_column": "id"
+      }
+    },
+    {
+      "collection": "survey_template",
+      "field": "id",
+      "type": "integer",
+      "meta": {
+        "collection": "survey_template",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "id",
+        "group": null,
+        "hidden": true,
+        "interface": "input",
+        "note": null,
+        "options": null,
+        "readonly": true,
+        "required": false,
+        "sort": 1,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "id",
+        "table": "survey_template",
+        "data_type": "integer",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_primary_key": true,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": true,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "survey_template",
+      "field": "questions",
+      "type": "alias",
+      "meta": {
+        "collection": "survey_template",
+        "conditions": null,
+        "display": "related-values",
+        "display_options": {
+          "template": "{{item:questions.title}}"
+        },
+        "field": "questions",
+        "group": null,
+        "hidden": false,
+        "interface": "list-m2a",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "sort": 3,
+        "special": [
+          "m2a"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      }
+    },
+    {
+      "collection": "survey_template",
+      "field": "surveys",
+      "type": "alias",
+      "meta": {
+        "collection": "survey_template",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "surveys",
+        "group": null,
+        "hidden": false,
+        "interface": "list-o2m",
+        "note": "Surveys using this template",
+        "options": {
+          "template": "{{name}}"
+        },
+        "readonly": true,
+        "required": false,
+        "sort": 4,
+        "special": [
+          "o2m"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      }
+    },
+    {
+      "collection": "survey_template",
+      "field": "name",
+      "type": "string",
+      "meta": {
+        "collection": "survey_template",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "name",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "sort": 2,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "name",
+        "table": "survey_template",
+        "data_type": "varchar",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "survey_template_questions",
+      "field": "id",
+      "type": "integer",
+      "meta": {
+        "collection": "survey_template_questions",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "id",
+        "group": null,
+        "hidden": true,
+        "interface": null,
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "sort": 1,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "id",
+        "table": "survey_template_questions",
+        "data_type": "integer",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_primary_key": true,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": true,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "survey_template_questions",
+      "field": "survey_template_id",
+      "type": "integer",
+      "meta": {
+        "collection": "survey_template_questions",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "survey_template_id",
+        "group": null,
+        "hidden": true,
+        "interface": null,
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "sort": 2,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "survey_template_id",
+        "table": "survey_template_questions",
+        "data_type": "integer",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": "survey_template",
+        "foreign_key_column": "id"
+      }
+    },
+    {
+      "collection": "survey_template_questions",
+      "field": "item",
+      "type": "string",
+      "meta": {
+        "collection": "survey_template_questions",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "item",
+        "group": null,
+        "hidden": true,
+        "interface": null,
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "sort": 3,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "item",
+        "table": "survey_template_questions",
+        "data_type": "varchar",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "survey_template_questions",
+      "field": "collection",
+      "type": "string",
+      "meta": {
+        "collection": "survey_template_questions",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "collection",
+        "group": null,
+        "hidden": true,
+        "interface": null,
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "sort": 4,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "collection",
+        "table": "survey_template_questions",
+        "data_type": "varchar",
+        "default_value": null,
+        "max_length": 255,
         "numeric_precision": null,
         "numeric_scale": null,
         "is_nullable": true,
@@ -1673,6 +2156,463 @@
         "has_auto_increment": false,
         "foreign_key_table": null,
         "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "surveys",
+      "field": "name",
+      "type": "string",
+      "meta": {
+        "collection": "surveys",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "name",
+        "group": null,
+        "hidden": false,
+        "interface": "input",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "sort": 4,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "name",
+        "table": "surveys",
+        "data_type": "varchar",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "surveys",
+      "field": "template",
+      "type": "integer",
+      "meta": {
+        "collection": "surveys",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "template",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown-m2o",
+        "note": null,
+        "options": {
+          "template": "{{name}}"
+        },
+        "readonly": false,
+        "required": false,
+        "sort": 5,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "template",
+        "table": "surveys",
+        "data_type": "integer",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": "survey_template",
+        "foreign_key_column": "id"
+      }
+    },
+    {
+      "collection": "surveys",
+      "field": "custom_question",
+      "type": "integer",
+      "meta": {
+        "collection": "surveys",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "custom_question",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown-m2o",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "sort": 6,
+        "special": [
+          "m2o"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "custom_question",
+        "table": "surveys",
+        "data_type": "integer",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": "questions",
+        "foreign_key_column": "id"
+      }
+    },
+    {
+      "collection": "surveys",
+      "field": "status",
+      "type": "string",
+      "meta": {
+        "collection": "surveys",
+        "conditions": null,
+        "display": "formatted-value",
+        "display_options": {
+          "format": true
+        },
+        "field": "status",
+        "group": null,
+        "hidden": false,
+        "interface": "select-dropdown",
+        "note": null,
+        "options": {
+          "choices": [
+            {
+              "text": "Draft",
+              "value": "draft"
+            },
+            {
+              "text": "Sent",
+              "value": "sent"
+            }
+          ]
+        },
+        "readonly": false,
+        "required": false,
+        "sort": 2,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "status",
+        "table": "surveys",
+        "data_type": "varchar",
+        "default_value": null,
+        "max_length": 255,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "surveys",
+      "field": "responses",
+      "type": "alias",
+      "meta": {
+        "collection": "surveys",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "responses",
+        "group": null,
+        "hidden": false,
+        "interface": "list-o2m",
+        "note": null,
+        "options": {
+          "enableCreate": false,
+          "enableSelect": false,
+          "template": null
+        },
+        "readonly": true,
+        "required": false,
+        "sort": 8,
+        "special": [
+          "o2m"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      }
+    },
+    {
+      "collection": "surveys",
+      "field": "date_created",
+      "type": "dateTime",
+      "meta": {
+        "collection": "surveys",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "date_created",
+        "group": null,
+        "hidden": false,
+        "interface": "datetime",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "sort": 3,
+        "special": [
+          "date-created"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "date_created",
+        "table": "surveys",
+        "data_type": "datetime",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "surveys",
+      "field": "contacts",
+      "type": "alias",
+      "meta": {
+        "collection": "surveys",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "contacts",
+        "group": null,
+        "hidden": false,
+        "interface": "list-m2m",
+        "note": null,
+        "options": {
+          "template": "{{contacts_id.first_name}} {{contacts_id.last_name}}"
+        },
+        "readonly": false,
+        "required": false,
+        "sort": 9,
+        "special": [
+          "m2m"
+        ],
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      }
+    },
+    {
+      "collection": "surveys",
+      "field": "agency",
+      "type": "string",
+      "meta": {
+        "collection": "surveys",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "agency",
+        "group": null,
+        "hidden": true,
+        "interface": "select-dropdown-m2o",
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "sort": 10,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "agency",
+        "table": "surveys",
+        "data_type": "char",
+        "default_value": null,
+        "max_length": 36,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": "agencies",
+        "foreign_key_column": "id"
+      }
+    },
+    {
+      "collection": "surveys_contacts",
+      "field": "id",
+      "type": "integer",
+      "meta": {
+        "collection": "surveys_contacts",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "id",
+        "group": null,
+        "hidden": true,
+        "interface": null,
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "sort": 1,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "id",
+        "table": "surveys_contacts",
+        "data_type": "integer",
+        "default_value": null,
+        "max_length": null,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": false,
+        "is_unique": false,
+        "is_primary_key": true,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": true,
+        "foreign_key_table": null,
+        "foreign_key_column": null
+      }
+    },
+    {
+      "collection": "surveys_contacts",
+      "field": "surveys_id",
+      "type": "string",
+      "meta": {
+        "collection": "surveys_contacts",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "surveys_id",
+        "group": null,
+        "hidden": true,
+        "interface": null,
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "sort": 2,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "surveys_id",
+        "table": "surveys_contacts",
+        "data_type": "char",
+        "default_value": null,
+        "max_length": 36,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": "surveys",
+        "foreign_key_column": "id"
+      }
+    },
+    {
+      "collection": "surveys_contacts",
+      "field": "contacts_id",
+      "type": "string",
+      "meta": {
+        "collection": "surveys_contacts",
+        "conditions": null,
+        "display": null,
+        "display_options": null,
+        "field": "contacts_id",
+        "group": null,
+        "hidden": true,
+        "interface": null,
+        "note": null,
+        "options": null,
+        "readonly": false,
+        "required": false,
+        "sort": 3,
+        "special": null,
+        "translations": null,
+        "validation": null,
+        "validation_message": null,
+        "width": "full"
+      },
+      "schema": {
+        "name": "contacts_id",
+        "table": "surveys_contacts",
+        "data_type": "char",
+        "default_value": null,
+        "max_length": 36,
+        "numeric_precision": null,
+        "numeric_scale": null,
+        "is_nullable": true,
+        "is_unique": false,
+        "is_primary_key": false,
+        "is_generated": false,
+        "generation_expression": null,
+        "has_auto_increment": false,
+        "foreign_key_table": "contacts",
+        "foreign_key_column": "id"
       }
     }
   ],
@@ -1864,12 +2804,205 @@
         "one_collection": "surveys",
         "one_collection_field": null,
         "one_deselect_action": "nullify",
-        "one_field": null,
+        "one_field": "responses",
         "sort_field": null
       },
       "schema": {
         "table": "responses",
         "column": "survey",
+        "foreign_key_table": "surveys",
+        "foreign_key_column": "id",
+        "constraint_name": null,
+        "on_update": "NO ACTION",
+        "on_delete": "SET NULL"
+      }
+    },
+    {
+      "collection": "responses",
+      "field": "contact",
+      "related_collection": "contacts",
+      "meta": {
+        "junction_field": null,
+        "many_collection": "responses",
+        "many_field": "contact",
+        "one_allowed_collections": null,
+        "one_collection": "contacts",
+        "one_collection_field": null,
+        "one_deselect_action": "nullify",
+        "one_field": "responses",
+        "sort_field": null
+      },
+      "schema": {
+        "table": "responses",
+        "column": "contact",
+        "foreign_key_table": "contacts",
+        "foreign_key_column": "id",
+        "constraint_name": null,
+        "on_update": "NO ACTION",
+        "on_delete": "SET NULL"
+      }
+    },
+    {
+      "collection": "survey_template_questions",
+      "field": "item",
+      "related_collection": null,
+      "meta": {
+        "junction_field": "survey_template_id",
+        "many_collection": "survey_template_questions",
+        "many_field": "item",
+        "one_allowed_collections": [
+          "questions"
+        ],
+        "one_collection": null,
+        "one_collection_field": "collection",
+        "one_deselect_action": "nullify",
+        "one_field": null,
+        "sort_field": null
+      }
+    },
+    {
+      "collection": "survey_template_questions",
+      "field": "survey_template_id",
+      "related_collection": "survey_template",
+      "meta": {
+        "junction_field": "item",
+        "many_collection": "survey_template_questions",
+        "many_field": "survey_template_id",
+        "one_allowed_collections": null,
+        "one_collection": "survey_template",
+        "one_collection_field": null,
+        "one_deselect_action": "nullify",
+        "one_field": "questions",
+        "sort_field": null
+      },
+      "schema": {
+        "table": "survey_template_questions",
+        "column": "survey_template_id",
+        "foreign_key_table": "survey_template",
+        "foreign_key_column": "id",
+        "constraint_name": null,
+        "on_update": "NO ACTION",
+        "on_delete": "SET NULL"
+      }
+    },
+    {
+      "collection": "surveys",
+      "field": "template",
+      "related_collection": "survey_template",
+      "meta": {
+        "junction_field": null,
+        "many_collection": "surveys",
+        "many_field": "template",
+        "one_allowed_collections": null,
+        "one_collection": "survey_template",
+        "one_collection_field": null,
+        "one_deselect_action": "nullify",
+        "one_field": "surveys",
+        "sort_field": null
+      },
+      "schema": {
+        "table": "surveys",
+        "column": "template",
+        "foreign_key_table": "survey_template",
+        "foreign_key_column": "id",
+        "constraint_name": null,
+        "on_update": "NO ACTION",
+        "on_delete": "SET NULL"
+      }
+    },
+    {
+      "collection": "surveys",
+      "field": "custom_question",
+      "related_collection": "questions",
+      "meta": {
+        "junction_field": null,
+        "many_collection": "surveys",
+        "many_field": "custom_question",
+        "one_allowed_collections": null,
+        "one_collection": "questions",
+        "one_collection_field": null,
+        "one_deselect_action": "nullify",
+        "one_field": null,
+        "sort_field": null
+      },
+      "schema": {
+        "table": "surveys",
+        "column": "custom_question",
+        "foreign_key_table": "questions",
+        "foreign_key_column": "id",
+        "constraint_name": null,
+        "on_update": "NO ACTION",
+        "on_delete": "SET NULL"
+      }
+    },
+    {
+      "collection": "surveys",
+      "field": "agency",
+      "related_collection": "agencies",
+      "meta": {
+        "junction_field": null,
+        "many_collection": "surveys",
+        "many_field": "agency",
+        "one_allowed_collections": null,
+        "one_collection": "agencies",
+        "one_collection_field": null,
+        "one_deselect_action": "nullify",
+        "one_field": "surveys",
+        "sort_field": null
+      },
+      "schema": {
+        "table": "surveys",
+        "column": "agency",
+        "foreign_key_table": "agencies",
+        "foreign_key_column": "id",
+        "constraint_name": null,
+        "on_update": "NO ACTION",
+        "on_delete": "SET NULL"
+      }
+    },
+    {
+      "collection": "surveys_contacts",
+      "field": "contacts_id",
+      "related_collection": "contacts",
+      "meta": {
+        "junction_field": "surveys_id",
+        "many_collection": "surveys_contacts",
+        "many_field": "contacts_id",
+        "one_allowed_collections": null,
+        "one_collection": "contacts",
+        "one_collection_field": null,
+        "one_deselect_action": "nullify",
+        "one_field": "surveys",
+        "sort_field": null
+      },
+      "schema": {
+        "table": "surveys_contacts",
+        "column": "contacts_id",
+        "foreign_key_table": "contacts",
+        "foreign_key_column": "id",
+        "constraint_name": null,
+        "on_update": "NO ACTION",
+        "on_delete": "SET NULL"
+      }
+    },
+    {
+      "collection": "surveys_contacts",
+      "field": "surveys_id",
+      "related_collection": "surveys",
+      "meta": {
+        "junction_field": "contacts_id",
+        "many_collection": "surveys_contacts",
+        "many_field": "surveys_id",
+        "one_allowed_collections": null,
+        "one_collection": "surveys",
+        "one_collection_field": null,
+        "one_deselect_action": "nullify",
+        "one_field": "contacts",
+        "sort_field": null
+      },
+      "schema": {
+        "table": "surveys_contacts",
+        "column": "surveys_id",
         "foreign_key_table": "surveys",
         "foreign_key_column": "id",
         "constraint_name": null,

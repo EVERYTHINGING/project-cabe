@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Project 1",
-    "client": null,
+    "client": "3f58ba11-4b14-4913-bfe5-4459abb95d8b",
     "type": "always-on"
   },
   {
