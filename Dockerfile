@@ -1,10 +1,5 @@
-FROM ubuntu:latest
-
-COPY docker-compose.yml .
-
-RUN apt-get update
-RUN apt-get --assume-yes install curl
-RUN curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-RUN chmod +x /usr/local/bin/docker-compose
-
-RUN docker-compose up -d
+FROM ubuntu:22.04
+RUN apt-get update && apt-get install -y docker-compose 
+WORKDIR /app 
+COPY docker-compose.yml ./
+ENTRYPOINT ["docker-compose", "up", "-d"] 
