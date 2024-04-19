@@ -1,21 +1,32 @@
 version: "3"
 services:
+  database:
+    image: postgis/postgis:13-master
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: "directus"
+      POSTGRES_PASSWORD: "directus"
+      POSTGRES_DB: "directus"
+
   directus:
     image: directus/directus:10.10.4
     ports:
       - 8055:8055
+    depends_on:
+      - database
     volumes:
-      - ${WEBAPP_STORAGE_HOME}/uploads:/directus/uploads
-      - ${WEBAPP_STORAGE_HOME}/extensions:/directus/extensions
+      - ./uploads:/directus/uploads
+      - ./extensions:/directus/extensions
     environment:
       KEY: "811cd6cd5ea0dede236a796a1d736d37"
       SECRET: "abe3ae2344d56df22c06565adad11fc6"
       ADMIN_EMAIL: "admin@example.com"
       ADMIN_PASSWORD: "d1r3ctu5"
       DB_CLIENT: "pg"
-      DB_HOST: "project-cabe-cms.postgres.database.azure.com"
+      DB_HOST: "project-cabe-cms-database-1"
       DB_PORT: 5432
-      DB_DATABASE: "postgres"
-      DB_USER: "dbadmin"
-      DB_PASSWORD: "GarBear!!!"
+      DB_DATABASE: "directus"
+      DB_USER: "directus"
+      DB_PASSWORD: "directus"
       WEBSOCKETS_ENABLED: true
