@@ -1,25 +1,14 @@
 [
   {
-    "id": "1c9242b5-733b-4f14-b268-470a9798d0e8",
-    "name": "Survey One",
-    "template": 1,
-    "custom_question": 2,
-    "status": "sent",
-    "date_created": "2024-04-14T17:39:07",
-    "agency": null,
+    "id": "08b53084-79ed-44df-b5eb-b9a1487ffae3",
+    "status": "published",
+    "user_created": "2c07bcdd-a411-4825-8c70-ae8461fb764f",
+    "date_created": "2024-04-18T05:51:34.651Z",
+    "user_updated": null,
+    "date_updated": null,
+    "project": "5ad9e27d-a702-49eb-9d9b-47ebea8d33c2",
     "responses": [
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      17
-    ],
-    "contacts": [
-      1,
-      2,
-      3
+      "9fe08d55-d35a-4a76-9426-16195b3e2ba3"
     ]
   }
 ]

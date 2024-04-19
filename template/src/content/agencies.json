@@ -1,14 +1,13 @@
 [
   {
-    "id": "db5014c5-c149-4492-993c-2745685ce911",
-    "name": "Agency 1",
-    "director_of_client_services": "c300d834-fcf4-4b05-a336-d4fed567deab",
+    "id": "3daeeef3-0399-4b70-a1ea-490e882b9112",
+    "user_created": "2c07bcdd-a411-4825-8c70-ae8461fb764f",
+    "date_created": "2024-04-18T05:46:53.314Z",
+    "user_updated": null,
+    "date_updated": null,
+    "name": "Agency One",
     "clients": [
-      "3f58ba11-4b14-4913-bfe5-4459abb95d8b"
-    ],
-    "account_managers": [
-      "c71e9879-87e5-4959-93f2-0841fb23cbaa"
-    ],
-    "surveys": []
+      "9ee0a832-c290-4d06-81c0-d8a40ef4f686"
+    ]
   }
 ]

@@ -1,25 +1,17 @@
 [
   {
-    "id": "275f1d53-6dd9-49f2-9b0f-dd6f381aced0",
-    "name": "Client 1",
-    "agency": null,
-    "contacts": [
-      "f3d74996-7d84-45e5-9f6a-56565a0b4ad9"
-    ],
+    "id": "9ee0a832-c290-4d06-81c0-d8a40ef4f686",
+    "user_created": "2c07bcdd-a411-4825-8c70-ae8461fb764f",
+    "date_created": "2024-04-18T05:49:17.978Z",
+    "user_updated": null,
+    "date_updated": null,
+    "agency": "3daeeef3-0399-4b70-a1ea-490e882b9112",
+    "name": "Client One",
     "projects": [
-      2
-    ]
-  },
-  {
-    "id": "3f58ba11-4b14-4913-bfe5-4459abb95d8b",
-    "name": "Nike",
-    "agency": "db5014c5-c149-4492-993c-2745685ce911",
-    "contacts": [
-      "94649b9b-b5b9-425b-9482-b227068c6537",
-      "cd6a6349-e342-4535-b7ad-bdb2dac426ab"
+      "5ad9e27d-a702-49eb-9d9b-47ebea8d33c2"
     ],
-    "projects": [
-      1
+    "contacts": [
+      "d18d4798-d8c2-4744-9ccc-5f452d472233"
     ]
   }
 ]

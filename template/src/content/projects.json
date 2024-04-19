@@ -1,14 +1,15 @@
 [
   {
-    "id": 1,
+    "id": "5ad9e27d-a702-49eb-9d9b-47ebea8d33c2",
+    "status": "published",
+    "user_created": "2c07bcdd-a411-4825-8c70-ae8461fb764f",
+    "date_created": "2024-04-18T05:50:39.159Z",
+    "user_updated": null,
+    "date_updated": null,
+    "client": "9ee0a832-c290-4d06-81c0-d8a40ef4f686",
     "name": "Project 1",
-    "client": "3f58ba11-4b14-4913-bfe5-4459abb95d8b",
-    "type": "always-on"
-  },
-  {
-    "id": 2,
-    "name": "Project 2",
-    "client": "275f1d53-6dd9-49f2-9b0f-dd6f381aced0",
-    "type": "always-on"
+    "surveys": [
+      "08b53084-79ed-44df-b5eb-b9a1487ffae3"
+    ]
   }
 ]

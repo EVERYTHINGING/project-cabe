@@ -3,7 +3,7 @@
     "collection": "agencies",
     "meta": {
       "collection": "agencies",
-      "icon": "partner_exchange",
+      "icon": null,
       "note": null,
       "display_template": null,
       "hidden": false,
@@ -24,15 +24,16 @@
       "versioning": false
     },
     "schema": {
+      "schema": "public",
       "name": "agencies",
-      "sql": "CREATE TABLE \"agencies\" (`id` char(36) NOT NULL, `name` varchar(255) NULL, `director_of_client_services` varchar(255) NULL, PRIMARY KEY (`id`), CONSTRAINT `agencies_director_of_client_services_foreign` FOREIGN KEY (`director_of_client_services`) REFERENCES `directus_users` (`id`) ON DELETE SET NULL)"
+      "comment": null
     }
   },
   {
     "collection": "clients",
     "meta": {
       "collection": "clients",
-      "icon": "attach_money",
+      "icon": null,
       "note": null,
       "display_template": null,
       "hidden": false,
@@ -40,28 +41,29 @@
       "translations": null,
       "archive_field": null,
       "archive_app_filter": true,
-      "archive_value": null,
-      "unarchive_value": null,
+      "archive_value": "archived",
+      "unarchive_value": "draft",
       "sort_field": null,
       "accountability": "all",
       "color": null,
       "item_duplication_fields": null,
-      "sort": 2,
+      "sort": 1,
       "group": "agencies",
       "collapse": "open",
       "preview_url": null,
       "versioning": false
     },
     "schema": {
+      "schema": "public",
       "name": "clients",
-      "sql": "CREATE TABLE \"clients\" (`id` char(36) NOT NULL, `name` varchar(255) NULL, `agency` char(36) NULL, PRIMARY KEY (`id`), CONSTRAINT `clients_agency_foreign` FOREIGN KEY (`agency`) REFERENCES `agencies` (`id`) ON DELETE SET NULL)"
+      "comment": null
     }
   },
   {
     "collection": "contacts",
     "meta": {
       "collection": "contacts",
-      "icon": "person",
+      "icon": null,
       "note": null,
       "display_template": null,
       "hidden": false,
@@ -69,37 +71,8 @@
       "translations": null,
       "archive_field": null,
       "archive_app_filter": true,
-      "archive_value": null,
-      "unarchive_value": null,
-      "sort_field": null,
-      "accountability": "all",
-      "color": null,
-      "item_duplication_fields": null,
-      "sort": 2,
-      "group": "clients",
-      "collapse": "open",
-      "preview_url": null,
-      "versioning": false
-    },
-    "schema": {
-      "name": "contacts",
-      "sql": "CREATE TABLE \"contacts\" (`id` char(36) NOT NULL, `first_name` varchar(255) NULL, `last_name` varchar(255) NULL, `email` varchar(255) NULL, `title` varchar(255) NULL, `client` char(36) NULL, PRIMARY KEY (`id`), CONSTRAINT `contacts_client_foreign` FOREIGN KEY (`client`) REFERENCES `clients` (`id`) ON DELETE SET NULL)"
-    }
-  },
-  {
-    "collection": "projects",
-    "meta": {
-      "collection": "projects",
-      "icon": "interactive_space",
-      "note": null,
-      "display_template": null,
-      "hidden": false,
-      "singleton": false,
-      "translations": null,
-      "archive_field": null,
-      "archive_app_filter": true,
-      "archive_value": null,
-      "unarchive_value": null,
+      "archive_value": "archived",
+      "unarchive_value": "draft",
       "sort_field": null,
       "accountability": "all",
       "color": null,
@@ -111,37 +84,39 @@
       "versioning": false
     },
     "schema": {
-      "name": "projects",
-      "sql": "CREATE TABLE \"projects\" (`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL, `name` varchar(255) NULL, `client` char(36) NULL, `type` varchar(255) NULL, CONSTRAINT `projects_client_foreign` FOREIGN KEY (`client`) REFERENCES `clients` (`id`) ON DELETE SET NULL)"
+      "schema": "public",
+      "name": "contacts",
+      "comment": null
     }
   },
   {
-    "collection": "questions",
+    "collection": "projects",
     "meta": {
-      "collection": "questions",
-      "icon": "question_mark",
+      "collection": "projects",
+      "icon": null,
       "note": null,
       "display_template": null,
       "hidden": false,
       "singleton": false,
       "translations": null,
-      "archive_field": null,
+      "archive_field": "status",
       "archive_app_filter": true,
-      "archive_value": null,
-      "unarchive_value": null,
+      "archive_value": "archived",
+      "unarchive_value": "draft",
       "sort_field": null,
       "accountability": "all",
       "color": null,
       "item_duplication_fields": null,
-      "sort": 3,
-      "group": "surveys",
+      "sort": 2,
+      "group": "clients",
       "collapse": "open",
       "preview_url": null,
       "versioning": false
     },
     "schema": {
-      "name": "questions",
-      "sql": "CREATE TABLE \"questions\" (`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL, `user_created` char(36) NULL, `date_created` datetime NULL, `user_updated` char(36) NULL, `date_updated` datetime NULL, `title` varchar(255) NULL, `type` varchar(255) NULL, CONSTRAINT `questions_user_created_foreign` FOREIGN KEY (`user_created`) REFERENCES `directus_users` (`id`), CONSTRAINT `questions_user_updated_foreign` FOREIGN KEY (`user_updated`) REFERENCES `directus_users` (`id`))"
+      "schema": "public",
+      "name": "projects",
+      "comment": null
     }
   },
   {
@@ -154,139 +129,54 @@
       "hidden": false,
       "singleton": false,
       "translations": null,
-      "archive_field": null,
+      "archive_field": "status",
       "archive_app_filter": true,
-      "archive_value": null,
-      "unarchive_value": null,
+      "archive_value": "archived",
+      "unarchive_value": "draft",
       "sort_field": null,
       "accountability": "all",
       "color": null,
       "item_duplication_fields": null,
-      "sort": 2,
+      "sort": 1,
       "group": "surveys",
       "collapse": "open",
       "preview_url": null,
       "versioning": false
     },
     "schema": {
+      "schema": "public",
       "name": "responses",
-      "sql": "CREATE TABLE \"responses\" (`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL, `date_created` datetime NULL, `data` json NULL, `survey` char(36) NULL, `contact` char(36) NULL, CONSTRAINT `responses_survey_foreign` FOREIGN KEY (`survey`) REFERENCES `surveys` (`id`) ON DELETE SET NULL, CONSTRAINT `responses_contact_foreign` FOREIGN KEY (`contact`) REFERENCES `contacts` (`id`) ON DELETE SET NULL)"
-    }
-  },
-  {
-    "collection": "survey_template",
-    "meta": {
-      "collection": "survey_template",
-      "icon": null,
-      "note": null,
-      "display_template": null,
-      "hidden": false,
-      "singleton": false,
-      "translations": null,
-      "archive_field": null,
-      "archive_app_filter": true,
-      "archive_value": null,
-      "unarchive_value": null,
-      "sort_field": null,
-      "accountability": "all",
-      "color": null,
-      "item_duplication_fields": null,
-      "sort": 2,
-      "group": null,
-      "collapse": "open",
-      "preview_url": null,
-      "versioning": false
-    },
-    "schema": {
-      "name": "survey_template",
-      "sql": "CREATE TABLE `survey_template` (`id` integer not null primary key autoincrement, `name` varchar(255) null)"
-    }
-  },
-  {
-    "collection": "survey_template_questions",
-    "meta": {
-      "collection": "survey_template_questions",
-      "icon": "import_export",
-      "note": null,
-      "display_template": null,
-      "hidden": true,
-      "singleton": false,
-      "translations": null,
-      "archive_field": null,
-      "archive_app_filter": true,
-      "archive_value": null,
-      "unarchive_value": null,
-      "sort_field": null,
-      "accountability": "all",
-      "color": null,
-      "item_duplication_fields": null,
-      "sort": 3,
-      "group": null,
-      "collapse": "open",
-      "preview_url": null,
-      "versioning": false
-    },
-    "schema": {
-      "name": "survey_template_questions",
-      "sql": "CREATE TABLE \"survey_template_questions\" (`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL, `survey_template_id` integer NULL, `item` varchar(255) NULL, `collection` varchar(255) NULL, CONSTRAINT `survey_template_questions_survey_template_id_foreign` FOREIGN KEY (`survey_template_id`) REFERENCES `survey_template` (`id`) ON DELETE SET NULL)"
+      "comment": null
     }
   },
   {
     "collection": "surveys",
     "meta": {
       "collection": "surveys",
-      "icon": "fact_check",
+      "icon": null,
       "note": null,
       "display_template": null,
       "hidden": false,
       "singleton": false,
       "translations": null,
-      "archive_field": null,
+      "archive_field": "status",
       "archive_app_filter": true,
-      "archive_value": null,
-      "unarchive_value": null,
+      "archive_value": "archived",
+      "unarchive_value": "draft",
       "sort_field": null,
       "accountability": "all",
       "color": null,
       "item_duplication_fields": null,
       "sort": 1,
-      "group": "agencies",
+      "group": "projects",
       "collapse": "open",
       "preview_url": null,
       "versioning": false
     },
     "schema": {
+      "schema": "public",
       "name": "surveys",
-      "sql": "CREATE TABLE \"surveys\" (`id` char(36) NOT NULL, `name` varchar(255) NULL, `template` integer NULL, `custom_question` integer NULL, `status` varchar(255) NULL, `date_created` datetime NULL DEFAULT null, `agency` char(36) NULL, PRIMARY KEY (`id`), CONSTRAINT `surveys_template_foreign` FOREIGN KEY (`template`) REFERENCES `survey_template` (`id`) ON DELETE SET NULL, CONSTRAINT `surveys_custom_question_foreign` FOREIGN KEY (`custom_question`) REFERENCES `questions` (`id`) ON DELETE SET NULL, CONSTRAINT `surveys_agency_foreign` FOREIGN KEY (`agency`) REFERENCES `agencies` (`id`) ON DELETE SET NULL)"
-    }
-  },
-  {
-    "collection": "surveys_contacts",
-    "meta": {
-      "collection": "surveys_contacts",
-      "icon": "import_export",
-      "note": null,
-      "display_template": null,
-      "hidden": true,
-      "singleton": false,
-      "translations": null,
-      "archive_field": null,
-      "archive_app_filter": true,
-      "archive_value": null,
-      "unarchive_value": null,
-      "sort_field": null,
-      "accountability": "all",
-      "color": null,
-      "item_duplication_fields": null,
-      "sort": null,
-      "group": null,
-      "collapse": "open",
-      "preview_url": null,
-      "versioning": false
-    },
-    "schema": {
-      "name": "surveys_contacts",
-      "sql": "CREATE TABLE \"surveys_contacts\" (`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL, `surveys_id` char(36) NULL, `contacts_id` char(36) NULL, CONSTRAINT `surveys_contacts_contacts_id_foreign` FOREIGN KEY (`contacts_id`) REFERENCES `contacts` (`id`) ON DELETE SET NULL, CONSTRAINT `surveys_contacts_surveys_id_foreign` FOREIGN KEY (`surveys_id`) REFERENCES `surveys` (`id`) ON DELETE SET NULL)"
+      "comment": null
     }
   }
 ]
